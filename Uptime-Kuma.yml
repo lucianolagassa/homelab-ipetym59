@@ -1,0 +1,15 @@
+# Uptime Kuma - monitoreo + alertas
+# Uso: docker compose -f uptime-kuma.yml up -d
+# Abrir: http://IP-DE-LA-VM:3001
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:latest
+    container_name: uptime-kuma
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    volumes:
+      - uptime-kuma-data:/app/data
+
+volumes:
+  uptime-kuma-data:
